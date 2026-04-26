@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Manrope } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 import { SiteCaptchaGate } from "@/components/site-captcha-gate"
 import "./globals.css"
 
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable} ${manrope.variable} antialiased dark`}>
       <body>
         <SiteCaptchaGate>{children}</SiteCaptchaGate>
+        <Analytics />
       </body>
     </html>
   )
